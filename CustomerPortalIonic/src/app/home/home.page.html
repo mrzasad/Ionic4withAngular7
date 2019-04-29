@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Customer Portal
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+      <ion-button expand="block" routerLink="/add-customer">Add New</ion-button>
+
+      <ion-grid>
+          <ion-row>
+              <ion-col><strong>Customer Name</strong></ion-col>
+              <ion-col><strong>Address</strong></ion-col>
+              <ion-col><strong>ZIP Code</strong></ion-col>
+              <ion-col><strong>City</strong></ion-col>
+              <ion-col><strong>Telephone</strong></ion-col>
+              <ion-col><strong>Contact First</strong></ion-col>
+              <ion-col><strong>Contact Last</strong></ion-col>
+              <ion-col><strong>Date Created</strong></ion-col>
+              <ion-col><strong>Action</strong></ion-col>
+          </ion-row>
+          
+          <ion-row *ngFor="let item of custList">         
+
+              <ion-col>{{item.CustomerName}}</ion-col>
+              <ion-col>{{item.Address}}</ion-col>
+              <ion-col>{{item.Zip}}</ion-col>
+              <ion-col>{{item.City}}</ion-col>
+              <ion-col>{{item.Telephone}}</ion-col>
+              <ion-col>{{item.ContactFirst}}</ion-col>
+              <ion-col>{{item.ContactLast}}</ion-col>
+              <ion-col>{{item.CreatedDate}}</ion-col>
+              <ion-col><ion-item [routerLink]="'/edit-customer/' + item.CustomerId" routerDirection="forward">Edit</ion-item></ion-col>
+              
+
+            </ion-row>
+
+      </ion-grid>
+
+
+    <!-- {{tempvar}}
+    <ion-button expand="full" (click)="updateTemp()">Click me!</ion-button> -->
+  </div>
+</ion-content>
